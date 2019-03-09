@@ -1,0 +1,24 @@
+<aura:component controller="CampingListController" implements="force:appHostable">
+    <aura:attribute name="items" type="Camping_Item__c[]"/> 
+	<aura:registerEvent name="updateItem" type="c:campingItemUpdate"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+
+    <!-- Input Form using components -->
+    <div class="slds-col slds-col--padded slds-p-top--large">
+        <c:campingListForm />
+    </div>
+    
+    
+    <!-- Display camping item records -->
+    <div class="slds-card slds-p-top--medium" id="listHeader">
+        <div class="slds-media__body slds-truncate">
+            <span class="slds-text-heading--small">Camping Items</span>
+        </div>
+        <div id="list" class="row">
+            <aura:iteration items="{!v.items}" var="item">
+                <c:campingListItem item="{!item}"/>
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>

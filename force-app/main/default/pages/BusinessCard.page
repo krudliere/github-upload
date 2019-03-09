@@ -1,0 +1,6 @@
+<apex:page docType="html-5.0" title="Business Card">
+    Name:   <apex:outputText >{!$User.FirstName}&nbsp;{!$User.LastName}</apex:outputText>
+    Title:  <apex:outputText >{!$User.Title}</apex:outputText>
+    Phone:  <apex:outputText >{!$User.Phone}</apex:outputText>
+    Email:  <apex:outputText >{!$User.Email}</apex:outputText>
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page controller="MultiEditCon" sidebar="false" >
+<apex:form >
+<apex:pageBlock title="Multi Line Edit">
+
+buttons and fields here
+<apex:pageBlockButtons >
+
+ <apex:commandButton value="Save"  action="{!save}"  rerender="rows" status="outStatus"/>
+ <apex:commandButton value="Add"   action="{!add}"   rerender="rows" status="outStatus"/>
+ <apex:commandButton value="Reset" action="{!reset}" rerender="rows" status="outStatus" 
+        immediate="true" />
+
+</apex:pageBlockButtons>
+ <apex:pageBlockTable value="{!accounts}" var="a" id="rows"  >
+  <apex:column headerValue="Account"><apex:inputField value="{!a.name}" required="true"/></apex:column>
+  <apex:column ><apex:inputField value="{!a.type}" required="false"/></apex:column>
+  <apex:column ><apex:inputField value="{!a.billingcity}" required="false"/></apex:column>
+  <apex:column ><apex:inputField value="{!a.SLAExpirationDate__c}" required="false"/></apex:column>
+
+</apex:pageBlockTable></apex:pageblock>
+
+</apex:form>
+</apex:page>

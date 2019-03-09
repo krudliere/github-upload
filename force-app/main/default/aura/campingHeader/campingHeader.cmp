@@ -1,0 +1,7 @@
+<aura:component >
+    <div class="slds-card slds-p-top--medium">
+        <div class="slds-media__body slds-truncate">
+            <span class="slds-text-heading--small">Camping Items</span>
+        </div>
+    </div>
+</aura:component>

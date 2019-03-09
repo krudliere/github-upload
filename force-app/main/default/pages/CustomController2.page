@@ -1,0 +1,10 @@
+<apex:page controller="MyController" tabStyle="Account">
+    <apex:form>
+        <apex:pageBlock title="Hello {!$User.LastName}">
+            You are viewing the {!account.type} account. <p/>
+            Change Account Type: <p/> 
+            <apex:inputField value="{!account.type}"/> <p/>
+            <apex:commandButton action="{!save}" value="Save New Account Type"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

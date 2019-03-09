@@ -1,0 +1,21 @@
+<!-- Page: -->
+<!--my change-->
+
+<apex:page controller="dataListCon" id="thePage">
+        <apex:form>      
+                <apex:dataTable value="{!accounts}" var="account" id="theList" cellPadding="4" border="1">
+                        <apex:column>
+                        <apex:inputText value="{!account.id}"/>
+                        </apex:column>
+                        <apex:column>
+                        <apex:inputText value="{!account.name}"/>
+                        </apex:column>
+                        <apex:column>
+                        <apex:inputField value="{!account.type}"/>
+                        </apex:column>
+                </apex:dataTable>
+                <apex:commandButton value="Save"  action="{!save}"  rerender="rows" status="outStatus"/>
+                <apex:commandButton value="Add"   action="{!add}"   rerender="rows" status="outStatus"/>
+                <apex:commandButton value="Reset" action="{!reset}" rerender="rows" status="outStatus" immediate="true" />
+        </apex:form>  
+</apex:page>

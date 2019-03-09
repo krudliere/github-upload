@@ -1,0 +1,27 @@
+<aura:component >
+    <aura:attribute name="item" type="Camping_Item__c"/>
+	<aura:registerEvent name="updateItem" type="c:campingItemUpdate"/>
+    <!-- Color the item blue if the expense is reimbursed -->      
+        <div class="slds-card">
+            <!-- If you registered a namespace, 
+                use v.item.myNamespace__Packed__c == true instead. -->
+            <div class="{!v.item.crudg__Packed__c == true 
+                        ? 'slds-theme--success' : 'slds-theme--warning'}">
+                <header class="slds-card__header slds-grid grid--flex-spread">
+                    <a aura:id="item" href="{!'/' + v.item.Id}">
+                        <h3>{!v.item.Name}</h3>
+                    </a>
+                </header>
+                <section class="slds-card__body">
+                    <div class="slds-tile slds-hint-parent">
+                        <!--<h3 class="slds-truncate">Name: <ui:outputText value="{!v.item.Name}" /></h3>-->
+                        <p class="slds-truncate">Quantity: <ui:outputNumber value="{!v.item.crudg__Quantity__c}"/></p>
+                        <p class="slds-truncate">Price: <ui:outputCurrency value="{!v.item.crudg__Price__c}"/></p>
+                        <p class="slds-truncate">Packed: <ui:inputCheckbox value="{!v.item.crudg__Packed__c}" 
+                                                                           click="{!c.clickPacked}"/>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component >
+  <aura:attribute name="DayOfTheWeek" type="String"/>
+  <p>
+    {!$Locale.labelForToday} is {!v.DayOfTheWeek}
+    <aura:if isTrue="{!v.DayOfTheWeek == 'Monday'}">
+      <br/><em>Sounds like somebody's got a case of the Mondays!</em>
+    </aura:if>
+  </p>
+</aura:component>

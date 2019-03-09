@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="newTask" type="Task" default="{ 'sobjectType': 'Task' }" />
+    <aura:attribute name="tasks" type="Object[]"/>
+
+    <aura:iteration items="{!v.tasks}" var="item">
+        {!item.Subject}, {!item.ActivityDate}<br/>
+    </aura:iteration>
+	
+    <force:inputField aura:id="taskSubject" value="{!v.newTask.Subject}"/>
+	<force:inputField aura:id="taskDate" value="{!v.newTask.ActivityDate}"/>
+    
+    <ui:button label="Add Task" press="{!c.addTask}" />
+</aura:component>
